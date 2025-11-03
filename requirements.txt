@@ -1,0 +1,6 @@
+rasterio
+geopandas
+shapely
+pandas
+pillow
+numpy
