@@ -24,3 +24,15 @@ Output
 ------
 - GeoTIFF chips to ./chips/<image_stem>/  (lossless LZW compression)
 - Optional JPG preview when --jpg-preview is set.
+
+
+==============
+Helper Script
+fix_runway_corners.py
+
+- Some runway coordinates may produce self-crossing (“bow-tie”) shapes.
+- Run this helper first to automatically reorder corner points and create a corrected CSV:
+- python fix_runway_corners.py data/Airports.csv --out data/Airports.fixed.csv
+
+- It writes a new file (e.g. Airports.fixed.csv) with valid, properly ordered corners.
+- Use that file as input to extract_satsar.py for clean, rectangular runway chips.
