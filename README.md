@@ -13,6 +13,12 @@ Usage
 -----
 python extract_satsar.py <IMAGEFILENAME> <DATAFILENAME> [--outdir OUTDIR] [--jpg-preview]
 
+To batch run:
+Get-ChildItem -Path data -Filter "*_Airport.tif" | ForEach-Object {
+    python satsar_extract.py $_.Name data/Airports.fixed.csv
+}
+
+
 Inputs
 ------
 - GeoTIFF (any CRS).
@@ -24,6 +30,12 @@ Output
 ------
 - GeoTIFF chips to ./chips/<image_stem>/  (lossless LZW compression)
 - Optional JPG preview when --jpg-preview is set.
+
+
+
+
+
+
 
 
 ==============
