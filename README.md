@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 Usage
 -----
-python extract_satsar.py <IMAGEFILENAME> <DATAFILENAME> [--outdir OUTDIR] [--jpg-preview]
+python satsar_extract.py <IMAGEFILENAME> <DATAFILENAME> [--outdir OUTDIR] [--jpg-preview]
 
 To batch run:
 Get-ChildItem -Path data -Filter "*_Airport.tif" | ForEach-Object {
@@ -33,11 +33,6 @@ Output
 
 
 
-
-
-
-
-
 ==============
 Helper Script
 fix_runway_corners.py
@@ -47,4 +42,4 @@ fix_runway_corners.py
 - python fix_runway_corners.py data/Airports.csv --out data/Airports.fixed.csv
 
 - It writes a new file (e.g. Airports.fixed.csv) with valid, properly ordered corners.
-- Use that file as input to extract_satsar.py for clean, rectangular runway chips.
+- Use that file as input to satsar_extract.py for clean, rectangular runway chips.
